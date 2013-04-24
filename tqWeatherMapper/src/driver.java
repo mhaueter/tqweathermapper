@@ -57,7 +57,7 @@ public class driver {
 		WxImage image = new WxImage(500,700,BufferedImage.TYPE_INT_RGB, cent);
 		
 		Point2D.Double[] points = new Point2D.Double[22];
-		points[0] = new Point2D.Double(-80.6, 25.185);
+		points[0] = new Point2D.Double(-80.6, 28);//25.185);
 		points[1] = new Point2D.Double(-80.2, 27.1276);
 		points[2] = new Point2D.Double(-81.46, 30.685);
 		points[3] = new Point2D.Double(-81.98, 30.798);

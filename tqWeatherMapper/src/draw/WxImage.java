@@ -258,9 +258,9 @@ public class WxImage extends BufferedImage{
 		Point2D.Double[] dst = new Point2D.Double[points.length];
 		Point2D.Double hold = new Point2D.Double(0,0);
 		for(int i = 0; i < points.length; i++){
-			this.proj.project(Math.toRadians(points[i].x), Math.toRadians(points[i].y), hold);
+			//this.proj.project(Math.toRadians(points[i].x), Math.toRadians(points[i].y), hold);
 			//System.out.println(hold);
-			this.proj.transformRadians(hold,hold);
+			this.proj.transform(points[i],hold);
 			dst[i] = new Point2D.Double(hold.getX(), hold.getY());
 			//dst[i].setLocation(hold.getX(), hold.getY());
 			

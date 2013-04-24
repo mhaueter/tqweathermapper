@@ -29,6 +29,12 @@ import java.io.Serializable;
  * 25 October 2010: Made all setters and getters dealing with degrees final and
  * calling the versions using radians. Derived classes now only need to
  * overwrite a single getter or setter (if overwriting is at all necessary).
+ * 
+ * 
+ * Changes by Michael Haueter
+ * 24 April 2013: Added lattitude adjustments for transforms so that the projection
+ * will be centered around the projectionLatitude and projectionLongitude, instead of
+ * just the projectionLongitude.  TODO need to make changes to all transforms.
  */
 public abstract class Projection implements Cloneable, Serializable {
 
@@ -148,10 +154,14 @@ public abstract class Projection implements Cloneable, Serializable {
      */
     public Point2D.Double transform(Point2D.Double src, Point2D.Double dst) {
         double x = src.x * DTR;
+        double y = src.y * DTR;
+        if (projectionLatitude != 0){
+        	y = MapMath.normalizeLatitude(y - projectionLatitude);
+        }
         if (projectionLongitude != 0) {
             x = MapMath.normalizeLongitude(x - projectionLongitude);
         }
-        project(x, src.y * DTR, dst);
+        project(x, y, dst);//src.y * DTR, dst);
         dst.x = totalScale * dst.x + totalFalseEasting;
         dst.y = totalScale * dst.y + totalFalseNorthing;
         return dst;
@@ -177,10 +187,12 @@ public abstract class Projection implements Cloneable, Serializable {
      */
     public Point2D.Double transformRadians(Point2D.Double src, Point2D.Double dst) {
         double x = src.x;
+        double y = src.y;
+        y = y - projectionLatitude;
         if (projectionLongitude != 0) {
             x = MapMath.normalizeLongitude(x - projectionLongitude);
         }
-        project(x, src.y, dst);
+        project(x, y, dst);  //src.y, dst);
         dst.x = totalScale * dst.x + totalFalseEasting;
         dst.y = totalScale * dst.y + totalFalseNorthing;
         return dst;
