@@ -192,7 +192,7 @@ public class WxImage extends BufferedImage{
 		super(width, height, imageType);
 		this.proj = proj;
 		this.center = center;
-		tPB = tbuffer;995
+		tPB = tbuffer;
 		bPB = bbuffer;
 		rPB = rbuffer;
 		lPB = lbuffer;
