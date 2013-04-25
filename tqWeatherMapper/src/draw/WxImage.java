@@ -3,6 +3,7 @@ package draw;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
@@ -30,6 +31,7 @@ import com.jhlabs.map.proj.*;
  * @author Michael Haueter
  *
  */
+@SuppressWarnings("unused")
 public class WxImage extends BufferedImage{
 	
 
@@ -115,8 +117,8 @@ public class WxImage extends BufferedImage{
 		lPB = 5;
 		this.height = height;
 		this.width = width;
-		drawheight = height - (tPB + bPB);
-		drawwidth = width - (rPB + lPB);
+		drawheight = this.height - (tPB + bPB);
+		drawwidth = this.width - (rPB + lPB);
 		proj.initialize();
 	}
 	
@@ -254,6 +256,15 @@ public class WxImage extends BufferedImage{
 		return true;
 	}
 	
+	/**
+	 * This method draws a shape on the image and if it is the first
+	 * the scale has not been set, then it calls the scale function
+	 * and sets the scale to this shape. 
+	 * 
+	 * TODO add color.
+	 * @param points
+	 * @return
+	 */
 	public Point2D.Double[] drawShape(Point2D.Double[] points){
 		Point2D.Double[] dst = new Point2D.Double[points.length];
 		Point2D.Double hold = new Point2D.Double(0,0);
@@ -285,8 +296,113 @@ public class WxImage extends BufferedImage{
 		return dst;
 	}
 	
+	public void drawContour(){
+		//TODO contour mapping
+	}
+	
+	public void drawGradient(){
+		//TODO gradient mapping
+	}
+	
+	public void writeData(){
+		//TODO write data onto the image
+	}
+	
+	public void drawVectors(){
+		//TODO vectors mapping
+	}
+	
+	/**
+	 * 
+	 * @param max
+	 * @param value
+	 * @param dir
+	 * @param lat in degrees
+	 * @param lon in degrees
+	 * @param color
+	 * @throws Exception 
+	 */
+	public void drawVector(double max, double speed, double dir, double lat, double lon, Color color) throws Exception{
+		if(this.scaled != true){
+			throw new Exception("ScaleNotSet");
+		}
+		Point2D.Double loc_t = new Point2D.Double(0,0);
+		lat = lat*-1; // this is for drawing on computer screen.
+		loc_t.setLocation(lon, lat);
+		this.proj.transform(loc_t, loc_t);
+		
+		int x0 = (int) (loc_t.x*this.projToDisplayRatio + this.drawwidth/2 + this.lPB);
+		int y0 = (int) (loc_t.y*this.projToDisplayRatio + this.drawheight/2 + this.tPB);
+		
+		System.out.println("x: " + x0 + ", y:" + y0);
+		//Point loc = new Point();
+		//loc.setLocation(xp, yp);
+		
+		double theta = dir * Math.PI/180;
+		double tsin = Math.sin(theta);
+		double tcos = Math.cos(theta);
+		
+		final int mlen = 40; // max length //TODO figure out proper max length.
+		int len = 0;  //Length starts at 0
+		
+		this.g.setColor(color);
+		
+		if(speed < max){
+			len = (int) ((speed/max)*mlen);
+		}
+		else{
+			len = mlen;
+		}
+		
+		int hlen = (int) (len/2); //This gets half the length, so that a vector can be drawn at a location
+		
+		// getting first end point of the vector
+		int x1 = (int) (x0 + hlen * tsin);
+		int y1 = (int) (y0 - hlen * tcos);
+		
+		//getting second end point of the vector
+		int x2 = (int) (x0 - hlen * tsin);
+		int y2 = (int) (y0 + hlen * tcos);
+		
+		if(speed > 3){
+			g.drawLine(x1, y1, x2, y2);
+			
+			int[] xPoints = new int[3];
+			int[] yPoints = new int[3];
+			int x_1 = -3;
+			int y_1 = hlen - 3;
+			int x_2 = 2;
+			int y_2 = hlen - 3;
+			
+			xPoints[0] = x2;
+            yPoints[0] = y2;
+            
+            xPoints[1] = (int) (x0 + (x_1 * tcos - y_1 * tsin));
+            yPoints[1] = (int) (y0 + (x_1 * tsin + y_1 * tcos));
+            
+            xPoints[2] = (int) (x0 + (int) (x_2 * tcos - y_2 * tsin));
+            yPoints[2] = (int) (y0 + (int) (x_2 * tsin + y_2 * tcos));
+            
+            g.drawPolygon(xPoints, yPoints, 3);
+            g.fillPolygon(xPoints, yPoints, 3);
+		}
+		
+		else{
+			int radius = 6;
+			this.g.drawArc((int)(x0-radius/2), (int)(y0-radius/2), radius, radius, 0, 360);
+		}
+		
+		
+	}
+	
+	/**
+	 * This is for testing purposes only, a more robust print function
+	 * will be written for final output.
+	 * @param filename
+	 * @throws IOException
+	 */
 	public void testPrint(String filename) throws IOException{
-		File outputfile = new File(filename + ".png"); //TODO change to file
+		File outputfile = new File(filename + ".png"); 
 		ImageIO.write(this, "png", outputfile);
 	}
 //	/**

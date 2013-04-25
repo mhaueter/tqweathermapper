@@ -1,4 +1,5 @@
- import java.awt.geom.Point2D;
+ import java.awt.Color;
+import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -13,11 +14,10 @@ public class driver {
 
 	/**
 	 * @param args
-	 * @throws ClassNotFoundException 
-	 * @throws IOException 
+	 * @throws Exception 
 	 * @throws SizeException 
 	 */
-	public static void main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main(String[] args) throws Exception {
 		
 //		ShapeFile s = ShapeFile.Import("Florida_State_Borders.tqSHP", Format.mshp);
 //		
@@ -83,11 +83,11 @@ public class driver {
 		//System.out.println(points[15]);
 		points = image.drawShape(points);
 
-		for(int i = 0; i < points.length; i++){
-			System.out.println(points[i]);
-		}
+		//for(int i = 0; i < points.length; i++){
+		//	System.out.println(points[i]);
+		//}
 		System.out.println(image.projToDisplayRatio);
-		
+		image.drawVector(100, 50, 270, 28.06, -83.911193, Color.white);
 		image.testPrint("testmap1");
 		
 		
