@@ -53,18 +53,18 @@ public class driver {
 //		
 //		System.out.println(dst);
 		
-		Point2D.Double cent = new Point2D.Double(-82,28);
-		WxImage image = new WxImage(100,100,BufferedImage.TYPE_INT_RGB, cent);
+		Point2D.Double cent = new Point2D.Double(-83.911193,28.06);
+		WxImage image = new WxImage(600,400,BufferedImage.TYPE_INT_RGB, cent);
 		
 		Point2D.Double[] points = new Point2D.Double[22];
-		points[0] = new Point2D.Double(-80.6, 28);//25.185);
+		points[0] = new Point2D.Double(-80.6, 25.185);
 		points[1] = new Point2D.Double(-80.2, 27.1276);
 		points[2] = new Point2D.Double(-81.46, 30.685);
 		points[3] = new Point2D.Double(-81.98, 30.798);
 		points[4] = new Point2D.Double(-82.01, 30.52);
 		points[5] = new Point2D.Double(-84.874878, 30.7);
 		points[6] = new Point2D.Double(-85, 30.9776);
-		points[7] = new Point2D.Double(-87.6,30.99);
+		points[7] = new Point2D.Double(-87.6, 30.99);
 		points[8] = new Point2D.Double(-87.47, 30.36);
 		points[9] = new Point2D.Double(-85.34, 29.741);
 		points[10] = new Point2D.Double(-84.02, 30.0976);
@@ -87,6 +87,8 @@ public class driver {
 			System.out.println(points[i]);
 		}
 		System.out.println(image.projToDisplayRatio);
+		
+		image.testPrint("testmap1");
 		
 		
 		

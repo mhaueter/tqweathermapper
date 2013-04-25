@@ -107,7 +107,7 @@ public class WxImage extends BufferedImage{
 		super(width, height, imageType);
 		this.center = center;
 		this.proj = new MercatorProjection();//Default constructor uses mercator projection
-		this.proj.setProjectionLatitudeDegrees(center.y);
+		this.proj.setProjectionLatitudeDegrees(center.y * -1); // multiply by -1 because in computers we draw in the -y Cartesian quadrant 
 		this.proj.setProjectionLongitudeDegrees(center.x);
 		tPB = 5; 
 		bPB = 5; 
@@ -161,7 +161,7 @@ public class WxImage extends BufferedImage{
 		super(width, height, imageType);
 		this.proj = new MercatorProjection();
 		this.center = center;
-		this.proj.setProjectionLatitudeDegrees(center.y);
+		this.proj.setProjectionLatitudeDegrees(center.y * -1); //multiply by -1 because in computers we draw in the -y cartesian
 		this.proj.setProjectionLongitudeDegrees(center.x);
 		tPB = tbuffer;
 		bPB = bbuffer;
@@ -192,7 +192,7 @@ public class WxImage extends BufferedImage{
 		super(width, height, imageType);
 		this.proj = proj;
 		this.center = center;
-		tPB = tbuffer;
+		tPB = tbuffer;995
 		bPB = bbuffer;
 		rPB = rbuffer;
 		lPB = lbuffer;
@@ -240,9 +240,9 @@ public class WxImage extends BufferedImage{
 		double minLon = (double) Collections.min(Arrays.asList(lonvals));
 		double minLat = (double) Collections.min(Arrays.asList(latvals));
 		System.out.println(minLon);
-		double latRatio = (this.drawheight-(this.tPB+this.bPB))/(maxLat - minLat);
-		double lonRatio = (this.drawwidth-(this.lPB+this.rPB))/(maxLon - minLon);
-		
+		double latRatio = (this.drawheight)/(maxLat - minLat);
+		double lonRatio = (this.drawwidth)/(maxLon - minLon);
+		System.out.println("latRatio:" + minLat + ", lonRatio:" + minLon);
 		if(latRatio < lonRatio){
 			this.projToDisplayRatio = latRatio;
 		}
@@ -260,6 +260,7 @@ public class WxImage extends BufferedImage{
 		for(int i = 0; i < points.length; i++){
 			//this.proj.project(Math.toRadians(points[i].x), Math.toRadians(points[i].y), hold);
 			//System.out.println(hold);
+			points[i].y = points[i].y * -1; // this is to ajust for drawing on a computer screen.
 			this.proj.transform(points[i],hold);
 			dst[i] = new Point2D.Double(hold.getX(), hold.getY());
 			//dst[i].setLocation(hold.getX(), hold.getY());
@@ -271,16 +272,22 @@ public class WxImage extends BufferedImage{
 		if(!this.scaled){
 			setScale(dst);
 		}
-		
+		int xpoints[] = new int[dst.length];
+		int ypoints[] = new int[dst.length];
 		for(int i = 0; i < dst.length; i++){
-			double tempx = (dst[i].x + (this.drawwidth/2 + this.lPB)/this.projToDisplayRatio)*this.projToDisplayRatio;
-			double tempy = (dst[i].y + (this.drawheight/2 + this.tPB)/this.projToDisplayRatio)*this.projToDisplayRatio;
-			dst[i].setLocation(tempx, tempy);
+			xpoints[i] = (int) (dst[i].x*this.projToDisplayRatio + this.drawwidth/2 + this.lPB); //+ (double) (this.drawwidth/2 + this.lPB));
+			ypoints[i] = (int) (dst[i].y*this.projToDisplayRatio + this.drawheight/2 + this.tPB);
+			dst[i].setLocation(xpoints[i], ypoints[i]);
 		}
 		
-		
+		g.drawPolygon(xpoints, ypoints, dst.length);
 		
 		return dst;
+	}
+	
+	public void testPrint(String filename) throws IOException{
+		File outputfile = new File(filename + ".png"); //TODO change to file
+		ImageIO.write(this, "png", outputfile);
 	}
 //	/**
 //	 * This prints the Image to a file after applying 3x3 anti-aliasing
