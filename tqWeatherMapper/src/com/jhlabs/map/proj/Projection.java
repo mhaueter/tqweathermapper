@@ -156,10 +156,12 @@ public abstract class Projection implements Cloneable, Serializable {
         double x = src.x * DTR;
         double y = src.y * DTR;
         if (projectionLatitude != 0){
-        	y = MapMath.normalizeLatitude(y - projectionLatitude);
+        	//y = MapMath.normalizeLatitude(y - projectionLatitude);
+        	y = (y - projectionLatitude);
         }
         if (projectionLongitude != 0) {
-            x = MapMath.normalizeLongitude(x - projectionLongitude);
+            //x = MapMath.normalizeLongitude(x - projectionLongitude);
+        	x = (x - projectionLongitude);
         }
         project(x, y, dst);//src.y * DTR, dst);
         dst.x = totalScale * dst.x + totalFalseEasting;

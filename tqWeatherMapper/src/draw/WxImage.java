@@ -240,8 +240,8 @@ public class WxImage extends BufferedImage{
 		double minLon = (double) Collections.min(Arrays.asList(lonvals));
 		double minLat = (double) Collections.min(Arrays.asList(latvals));
 		System.out.println(minLon);
-		double latRatio = (this.drawheight)/(maxLat - minLat);
-		double lonRatio = (this.drawwidth)/(maxLon - minLon);
+		double latRatio = (this.drawheight-(this.tPB+this.bPB))/(maxLat - minLat);
+		double lonRatio = (this.drawwidth-(this.lPB+this.rPB))/(maxLon - minLon);
 		
 		if(latRatio < lonRatio){
 			this.projToDisplayRatio = latRatio;
@@ -265,12 +265,20 @@ public class WxImage extends BufferedImage{
 			//dst[i].setLocation(hold.getX(), hold.getY());
 			
 			//dst[i].setLocation(hold);
+			
 		}
-		
 		
 		if(!this.scaled){
 			setScale(dst);
 		}
+		
+		for(int i = 0; i < dst.length; i++){
+			double tempx = (dst[i].x + (this.drawwidth/2 + this.lPB)/this.projToDisplayRatio)*this.projToDisplayRatio;
+			double tempy = (dst[i].y + (this.drawheight/2 + this.tPB)/this.projToDisplayRatio)*this.projToDisplayRatio;
+			dst[i].setLocation(tempx, tempy);
+		}
+		
+		
 		
 		return dst;
 	}
