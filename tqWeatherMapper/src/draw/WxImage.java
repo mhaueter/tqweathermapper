@@ -395,6 +395,125 @@ public class WxImage extends BufferedImage{
 		
 	}
 	
+	public void drawWindBarbs(){
+		
+	}
+	
+	public void drawWindBarb(double speed, double dir, double lat, double lon, Color color) throws Exception{
+		if(this.scaled !=true){
+			throw new Exception("ScaleNotSet");
+		}
+		Point2D.Double loc_t = new Point2D.Double(0,0);
+		lat = lat*-1;
+		loc_t.setLocation(lon, lat);
+		this.proj.transform(loc_t, loc_t);
+		
+		int x0 = (int) (loc_t.x*this.projToDisplayRatio + this.drawwidth/2 + this.lPB);
+		int y0 = (int) (loc_t.y*this.projToDisplayRatio + this.drawheight/2 + this.tPB);
+		
+		this.g.setColor(color);
+		int width = 24; 
+		//int height = 24; //No Use at this time
+		double theta = dir * Math.PI/180;
+		double windspeed = speed;
+		
+		double tsin = Math.sin(theta);
+		double tcos = Math.cos(theta);
+		
+		int len = 0;
+		while (speed >=48){
+			len += 6;
+			speed -= 50;
+		}
+		while (speed >= 8){
+			len += 3;
+			speed -= 10;
+		}
+		if (speed >= 3.0){
+			len += 3;
+		}
+		
+		int lenBarb = Math.max(len, width);
+		int x2 = (int) (x0 + lenBarb * tsin);
+		int y2 = (int) (y0 - lenBarb * tcos);
+		
+		// For Calm Winds
+		if (windspeed < .5){
+			int radius = 10;
+			this.g.drawArc(x0 - radius/2, y0 -radius/2, radius, radius, 0, 360);
+			return;
+		}
+		else{
+			this.g.drawLine(x0, y0, x2, y2);
+		}
+		
+		int start = 0;
+		speed = windspeed;
+		
+		while (speed >= 48){
+			double x_1 = 0;
+			double y_1 = -lenBarb + start + 4;
+			double x_2 = (.4* lenBarb + 2);
+			double y_2 = -lenBarb + start - 1;
+			double x_3 = 0;
+			double y_3 = -lenBarb + start - 1;
+		
+			int[] xPoints = new int[3];
+			int[] yPoints = new int[3];
+		
+			xPoints[0] = x0 + (int) (x_1 * tcos - y_1 * tsin);
+			yPoints[0] = y0 + (int) (x_1 * tsin + y_1 * tcos);
+		
+			xPoints[1] = x0 + (int) (x_2 * tcos - y_2 * tsin);
+			yPoints[1] = y0 + (int) (x_2 * tsin + y_2 * tcos);
+			
+			xPoints[2] = x0 + (int) (x_3 * tcos - y_3 * tsin);
+			yPoints[2] = y0 + (int) (x_3 * tsin + y_3 * tcos);
+			
+			this.g.fillPolygon(xPoints, yPoints, 3);
+		
+			start +=6;
+			speed -=50;
+		}
+	
+		while (speed >= 8.0) {
+			double x_1 = 0;
+			double y_1 = -lenBarb + start;
+			double x_2 = (.4 * lenBarb);
+			double y_2 = -lenBarb + start -3;
+		
+			int begx = x0 + (int) (x_1 * tcos - y_1 * tsin);
+			int begy = y0 + (int) (x_1 * tsin + y_1 * tcos);
+		
+			int endx = x0 + (int) (x_2 * tcos - y_2 * tsin);
+			int endy = y0 + (int) (x_2 * tsin + y_2 * tcos);
+		
+			this.g.drawLine(begx, begy, endx, endy);
+		
+			start += 3;
+			speed -= 10;
+		}
+		if( speed >= 3.0){
+			if ((speed >= 3.0) && (speed < 8.0)){ //Special case
+				start = 3;
+			}
+			double x_1 = 0;
+			double y_1 = -lenBarb + start;
+			double x_2 = .2 * lenBarb;
+			double y_2 = -lenBarb + start -1.5;
+			
+			int begx = x0 + (int) (x_1 * tcos - y_1 * tsin);
+			int begy = y0 + (int) (x_1 * tsin + y_1 * tcos);
+			
+			int endx = x0 + (int) (x_2 * tcos - y_2 * tsin);
+			int endy = y0 + (int) (x_2 * tsin + y_2 * tcos);
+			
+			this.g.drawLine(begx, begy, endx, endy);
+			start += 3;
+		}
+	}
+	
+	
 	/**
 	 * This is for testing purposes only, a more robust print function
 	 * will be written for final output.

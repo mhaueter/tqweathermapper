@@ -87,7 +87,8 @@ public class driver {
 		//	System.out.println(points[i]);
 		//}
 		System.out.println(image.projToDisplayRatio);
-		image.drawVector(100, 50, 270, 28.06, -83.911193, Color.white);
+		//image.drawVector(100, 50, 270, 28.06, -83.911193, Color.white);
+		image.drawWindBarb(78, 280, 28.06, -83.911193, Color.white);
 		image.testPrint("testmap1");
 		
 		
