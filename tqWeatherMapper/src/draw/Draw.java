@@ -134,18 +134,7 @@ public class Draw {
 		}
 	}
 	
-	/**
-	 * This draws a gradient from the TQ GridData, this uses a bicubic
-	 * algorithm in order to interpolate what the color should be.  
-	 * 
-	 * @param dat the data as TQ GridData
-	 * @param scale the gradient Scale as a TQ Scale
-	 * @param image the image as a WxImage
-	 */
-	public static void drawGradient(GridData dat, Scale scale, WxImage image){
 		
-	}
-	
 	/**
 	 * This draws a contour grom the TQ GridData, this uses a bicubic
 	 * algorithm in order to interpolate what the probable values between
