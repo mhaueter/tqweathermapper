@@ -21,6 +21,7 @@ import java.text.*;
 /**
  * A NumberFormat for formatting Angles in various commonly-found mapping styles.
  */
+@SuppressWarnings("serial")
 public class AngleFormat extends NumberFormat {
 
 	public final static String ddmmssPattern = "DdM";

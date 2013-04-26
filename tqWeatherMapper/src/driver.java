@@ -1,12 +1,6 @@
  import java.awt.Color;
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Double;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-
-import com.jhlabs.map.proj.*;
-
-import object.*;
 import draw.*;
 
 
@@ -54,7 +48,7 @@ public class driver {
 //		System.out.println(dst);
 		
 		Point2D.Double cent = new Point2D.Double(-83.911193,28.06);
-		WxImage image = new WxImage(600,400,BufferedImage.TYPE_INT_RGB, cent);
+		WxImage image = new WxImage(720,520,BufferedImage.TYPE_INT_RGB, cent);
 		
 		Point2D.Double[] points = new Point2D.Double[22];
 		points[0] = new Point2D.Double(-80.6, 25.185);

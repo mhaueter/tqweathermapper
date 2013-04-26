@@ -1,7 +1,6 @@
 package draw;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
 
 import object.*;
@@ -190,6 +189,7 @@ public class Draw {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	public static void drawCircle(int x, int y, WxImage image, int radius, int color){
 		double alpha = Math.PI * 2 / 40;
 		for(int i = 0; i < 40 ; i++){
@@ -200,6 +200,7 @@ public class Draw {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	public static void drawRotatedTriangle(int x, int y, double cost, double sint, WxImage image, double x1, double y1, double x2, double y2, double x3, double y3){
 		int[] xpoints = new int[3];
 		int[] ypoints = new int[3];

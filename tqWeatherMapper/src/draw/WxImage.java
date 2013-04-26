@@ -261,7 +261,7 @@ public class WxImage extends BufferedImage{
 	 * the scale has not been set, then it calls the scale function
 	 * and sets the scale to this shape. 
 	 * 
-	 * TODO add color.
+	 * TODO add color. and use ShapeFile
 	 * @param points
 	 * @return
 	 */
