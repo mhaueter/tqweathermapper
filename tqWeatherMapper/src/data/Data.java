@@ -30,4 +30,7 @@ abstract class Data {
 	abstract String[] getSiteIDs();
 	
 	
+	//These Methods deal are required for the importing of data
+	abstract void importData();
+	
 }

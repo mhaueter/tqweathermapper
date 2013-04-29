@@ -58,4 +58,10 @@ public class NetcdfData extends Data{
 		return null;
 	}
 
+	@Override
+	void importData() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
