@@ -1,10 +1,17 @@
 package data;
 
 import java.awt.geom.Point2D.Double;
+import java.io.IOException;
+import java.util.ArrayList;
+
 
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.xml.sax.SAXException;
 
 public class MdfData extends Data{
 
@@ -37,7 +44,13 @@ public class MdfData extends Data{
 		if(paramInfo){
 			importParamInfo();
 		}
-		importSiteInfo();
+		try {
+			importSiteInfo();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		importDataFile();
 	}
 	
@@ -47,7 +60,59 @@ public class MdfData extends Data{
 		
 	}
 	
-	public void importSiteInfo(){
+	public void importSiteInfo() throws SAXException, IOException{
+		DOMParser parser = new DOMParser();
+		parser.parse(this.siteInfoFile);
+		Document doc = parser.getDocument();
+		
+		// Root XML node
+		NodeList root = doc.getChildNodes();
+		
+		Node stin = getNode("siteinfo", root);
+		
+		Node table = getNode("table", stin.getChildNodes());
+		
+		NodeList list = table.getChildNodes();
+		
+		
+		ArrayList<String> field_ids = new ArrayList<String>();
+		ArrayList<String> field_types = new ArrayList<String>();
+		ArrayList<String> sites = new ArrayList<String>();
+		for(int i = 0; i < list.getLength(); i ++){
+			if(list.item(i).getNodeName().equalsIgnoreCase("fieldref")){
+				field_ids.add(getNodeAttr("id", list.item(i)));
+				field_types.add(getNodeAttr("type", list.item(i)));
+			}
+			if(list.item(i).getNodeName().equalsIgnoreCase("record")){
+				sites.add(list.item(i).getNodeValue());
+			}
+		}
+		
+		field_ids.trimToSize();
+		field_types.trimToSize();
+		sites.trimToSize();
+		int siteIdIdx; // = field_ids.indexOf();
+		int siteNameIdx;
+		int latIdx;
+		int lonIdx;
+		
+		this.siteids = new String[sites.size()];
+		this.sitenames = new String[sites.size()];
+		this.lats = new double[sites.size()];
+		this.lons = new double[sites.size()];
+		
+		
+//		Node item = getNode("fieldref", list);
+//		list.item()
+//		
+//		while(item.getNodeName().equalsIgnoreCase("fieldref")){
+//			
+//		}
+//		
+//		while(item.getNodeName().equalsIgnoreCase("record")){
+//			
+//		}
+		
 		
 	}
 	
@@ -58,7 +123,7 @@ public class MdfData extends Data{
 
 	@Override
 	double getLat(String sitename) {
-		// TODO Auto-generated method stub
+		//TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -137,7 +202,7 @@ public class MdfData extends Data{
 	
 	//***************************************************//
 	//*********** XML Parsing Methods *******************//
-	// These Methods were provided by Eric Bruno
+	// These Methods were provided by Eric Bruno         //
 	
 	
 	private Node getNode(String tagname, NodeList nodes){

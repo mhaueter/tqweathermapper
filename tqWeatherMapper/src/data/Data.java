@@ -7,7 +7,7 @@ abstract class Data {
 	
 
 	protected String[] sitenames;
-	protected String siteids;
+	protected String[] siteids;
 	protected String[] parameters;
 	protected double[] lats;
 	protected double[] lons;
