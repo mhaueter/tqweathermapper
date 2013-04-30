@@ -10,7 +10,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
 import org.xml.sax.SAXException;
 
 public class MdfData extends Data{
@@ -91,7 +90,8 @@ public class MdfData extends Data{
 		field_ids.trimToSize();
 		field_types.trimToSize();
 		sites.trimToSize();
-		int siteIdIdx; // = field_ids.indexOf();
+		
+		int siteIdIdx;// = field_ids.indexOf();
 		int siteNameIdx;
 		int latIdx;
 		int lonIdx;
@@ -101,17 +101,11 @@ public class MdfData extends Data{
 		this.lats = new double[sites.size()];
 		this.lons = new double[sites.size()];
 		
+		for(int i = 0; i < sitenames.length; i++){
+			
+		}
 		
-//		Node item = getNode("fieldref", list);
-//		list.item()
-//		
-//		while(item.getNodeName().equalsIgnoreCase("fieldref")){
-//			
-//		}
-//		
-//		while(item.getNodeName().equalsIgnoreCase("record")){
-//			
-//		}
+		
 		
 		
 	}
