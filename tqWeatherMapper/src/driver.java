@@ -1,6 +1,8 @@
  import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+
+import data.MdfData;
 import draw.*;
 
 
@@ -85,7 +87,8 @@ public class driver {
 		image.drawWindBarb(78, 280, 28.06, -83.911193, Color.white);
 		image.testPrint("testmap1");
 		
-		
+		data.Data testing = new MdfData("junk", "siteinfo.xml");
+		testing.importData();
 		
 		
 		

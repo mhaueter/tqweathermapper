@@ -18,6 +18,7 @@ public class Parse {
 		for(int i = 0; i < sarray.length; i++){
 			if(sarray[i] == ','){
 				newStrings.add("");
+				continue;
 			}
 			if((sarray[i] == '"') && (inquote == false)){
 				inquote = true;
@@ -29,6 +30,7 @@ public class Parse {
 					continue;
 				}
 				newStrings.set(newStrings.size() - 1, newStrings.get(newStrings.size() - 1).concat(Character.toString(sarray[i])));
+				continue;
 			}
 			if(sarray[i] == ' '){
 				continue;

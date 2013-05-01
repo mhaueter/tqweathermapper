@@ -83,7 +83,8 @@ public class MdfData extends Data{
 				field_types.add(getNodeAttr("type", list.item(i)));
 			}
 			if(list.item(i).getNodeName().equalsIgnoreCase("record")){
-				sites.add(list.item(i).getNodeValue());
+				System.out.println(getNodeValue(list.item(i)));
+				sites.add(getNodeValue(list.item(i)));//list.item(i).getNodeValue());
 			}
 		}
 		
@@ -113,6 +114,8 @@ public class MdfData extends Data{
 			this.lons[i] = java.lang.Double.parseDouble(tmp[lonIdx]);
 			this.elevs[i] = java.lang.Double.parseDouble(tmp[elevIdx]);
 			
+			//Test Output
+			//System.out.println("id: " + this.siteids[i] + ", name: " + this.sitenames[i] + ", lat: " + this.lats[i]);
 		}
 		
 		return;
@@ -126,6 +129,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	double getLat(String sitename) {
 		//TODO Auto-generated method stub
 		return 0;
@@ -135,6 +139,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	double getLon(String sitename) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -144,6 +149,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	Double getLocation(String sitename) {
 		// TODO Auto-generated method stub
 		return null;
@@ -153,6 +159,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	double getDatum(String sitename, String param) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -162,6 +169,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	String getSiteID(String sitename) {
 		// TODO Auto-generated method stub
 		return null;
@@ -171,6 +179,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	double[] getData(String param) {
 		// TODO Auto-generated method stub
 		return null;
@@ -180,6 +189,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	String[] getSites() {
 		// TODO Auto-generated method stub
 		return null;
@@ -189,6 +199,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	Double[] getLocations() {
 		// TODO Auto-generated method stub
 		return null;
@@ -198,6 +209,7 @@ public class MdfData extends Data{
 
 
 	@Override
+	public
 	String[] getSiteIDs() {
 		// TODO Auto-generated method stub
 		return null;
