@@ -6,11 +6,12 @@ abstract class Data {
 
 	
 
-	protected String[] sitenames;
-	protected String[] siteids;
+	protected String[] sitenames; // Required info
+	protected String[] siteids; // Required info
 	protected String[] parameters;
-	protected double[] lats;
-	protected double[] lons;
+	protected double[] lats; // Required info
+	protected double[] lons; // Required info
+	protected double[] elevs; // Required info
 	protected double data[][];
 	protected String timestamp;
 	
