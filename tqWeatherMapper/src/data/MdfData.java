@@ -91,21 +91,31 @@ public class MdfData extends Data{
 		field_types.trimToSize();
 		sites.trimToSize();
 		
-		int siteIdIdx;// = field_ids.indexOf();
-		int siteNameIdx;
-		int latIdx;
-		int lonIdx;
+		int siteIdIdx = field_ids.indexOf("stid");
+		int siteNameIdx = field_ids.indexOf("name");
+		int latIdx = field_ids.indexOf("lat");
+		int lonIdx = field_ids.indexOf("lon");
+		int elevIdx = field_ids.indexOf("elev");
+		//Note that other site information is not used by this Software at this time.
 		
 		this.siteids = new String[sites.size()];
 		this.sitenames = new String[sites.size()];
 		this.lats = new double[sites.size()];
 		this.lons = new double[sites.size()];
+		this.elevs = new double[sites.size()];
 		
-		for(int i = 0; i < sitenames.length; i++){
+		
+		for(int i = 0; i < sites.size(); i++){
+			String[] tmp = Parse.parseMdfRecord(sites.get(i));
+			this.siteids[i] = tmp[siteIdIdx];
+			this.sitenames[i] = tmp[siteNameIdx];
+			this.lats[i] = java.lang.Double.parseDouble(tmp[latIdx]);
+			this.lons[i] = java.lang.Double.parseDouble(tmp[lonIdx]);
+			this.elevs[i] = java.lang.Double.parseDouble(tmp[elevIdx]);
 			
 		}
 		
-		
+		return;
 		
 		
 	}
