@@ -83,7 +83,8 @@ public class MdfData extends Data{
 				field_types.add(getNodeAttr("type", list.item(i)));
 			}
 			if(list.item(i).getNodeName().equalsIgnoreCase("record")){
-				System.out.println(getNodeValue(list.item(i)));
+				//test info
+				//System.out.println(getNodeValue(list.item(i)));
 				sites.add(getNodeValue(list.item(i)));//list.item(i).getNodeValue());
 			}
 		}
