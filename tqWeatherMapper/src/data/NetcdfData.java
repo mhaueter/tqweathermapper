@@ -32,12 +32,7 @@ public class NetcdfData extends Data{
 		return 0;
 	}
 
-	@Override
-	public
-	String getSiteID(String sitename) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public

@@ -18,11 +18,11 @@ public abstract class Data {
 
 	
 	//These Methods are for a Single Site Data
-	public abstract double getLat(String sitename);
-	public abstract double getLon(String sitename);
-	public abstract Point2D.Double getLocation(String sitename);
-	public abstract double getDatum(String sitename, String param);
-	public abstract String getSiteID(String sitename);
+	public abstract double getLat(String siteid);
+	public abstract double getLon(String siteid);
+	public abstract Point2D.Double getLocation(String siteid);
+	public abstract double getDatum(String siteid, String param);
+	
 	
 	//These Methods get all sites;
 	public abstract double[] getData(String param);

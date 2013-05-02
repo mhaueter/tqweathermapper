@@ -3,7 +3,6 @@ package data;
 import java.awt.geom.Point2D.Double;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,16 +27,26 @@ public class MdfData extends Data{
 	
 	//TODO create parameter info variables
 	
-	
+	/**
+	 * This is the basic constructor for the MDFData File type.
+	 * 
+	 * @param dataFile - the .mdf file containing the data.
+	 * @param siteInfoFile - the .xml file containing site information
+	 */
 	public MdfData(String dataFile, String siteInfoFile){
 		this.dataFile = dataFile;
 		this.siteInfoFile = siteInfoFile;
-		
-		
-			
 	}
 	
-	public MdfData(String dataFile, String siteInfoFile, String paramInfoFile){
+	/**
+	 * This is a basic constructor for the MDFData file type.
+	 * 
+	 * @param dataFile - the .mdf file containing the data.
+	 * @param siteInfoFile - the .xml file containing site information
+	 * @param paramInfoFile - the .xml file containing parameter information
+	 */
+	@SuppressWarnings("unused")
+	private MdfData(String dataFile, String siteInfoFile, String paramInfoFile){
 		this.dataFile = dataFile;
 		this.siteInfoFile = siteInfoFile;
 		this.paramInfoFile = paramInfoFile;
@@ -45,6 +54,10 @@ public class MdfData extends Data{
 		
 	}
 	
+	/**
+	 * This imports data from the files into the basic data structure.
+	 * Note that the import is required before any data is imported.  
+	 */
 	public void importData(){
 		if(paramInfo){
 			importParamInfo();
@@ -61,11 +74,18 @@ public class MdfData extends Data{
 	
 	
 	
-	public void importParamInfo(){
+	private void importParamInfo(){
 		
 	}
 	
-	public void importSiteInfo() throws SAXException, IOException{
+	/**
+	 * This imports the information about sites located in the
+	 * siteInfo.xml file. 
+	 * 
+	 * @throws SAXException
+	 * @throws IOException
+	 */
+	private void importSiteInfo() throws SAXException, IOException{
 		DOMParser parser = new DOMParser();
 		parser.parse(this.siteInfoFile);
 		Document doc = parser.getDocument();
@@ -130,7 +150,11 @@ public class MdfData extends Data{
 		
 	}
 	
-	public void importDataFile(){
+	/**
+	 * This imports all the data contained in the MDF file.  
+	 */
+	@SuppressWarnings("unused")
+	private void importDataFile(){
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File(this.dataFile)));
 			String buffer;
@@ -195,19 +219,24 @@ public class MdfData extends Data{
 			br.close();
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 
 	@Override
-	public
-	double getLat(String sitename) {
-		//TODO Auto-generated method stub
+	/**
+	 * This gets the lattitude of a site.  
+	 * note the sitename is actually the siteid.
+	 */
+	public double getLat(String sitename) {
+		for(int i = 0; i < siteids.length; i ++){
+			if(siteids[i].equalsIgnoreCase(sitename)){
+				return lats[i];
+			}
+		}
 		return 0;
 	}
 
@@ -215,9 +244,16 @@ public class MdfData extends Data{
 
 
 	@Override
-	public
-	double getLon(String sitename) {
-		// TODO Auto-generated method stub
+	/**
+	 * This gets the longitude of a site
+	 * note the sitename is actually the siteid
+	 */
+	public double getLon(String sitename) {
+		for(int i = 0; i < siteids.length; i ++){
+			if(siteids[i].equalsIgnoreCase(sitename)){
+				return lons[i];
+			}
+		}
 		return 0;
 	}
 
@@ -225,9 +261,16 @@ public class MdfData extends Data{
 
 
 	@Override
-	public
-	Double getLocation(String sitename) {
-		// TODO Auto-generated method stub
+	/**
+	 * This gets the lat/lon of a site
+	 * note the sitename is actually the siteid
+	 */
+	public Double getLocation(String sitename) {
+		for(int i = 0; i < siteids.length; i ++){
+			if(siteids[i].equalsIgnoreCase(sitename)){
+				return new Double(lons[i],lats[i]);
+			}
+		}
 		return null;
 	}
 
@@ -235,19 +278,41 @@ public class MdfData extends Data{
 
 
 	@Override
-	public
-	double getDatum(String sitename, String param) {
-		// TODO Auto-generated method stub
+	/**
+	 * This gets a single data 
+	 */
+	public double getDatum(String sitename, String param) {
+		for(int i = 0; i < siteids.length; i ++){
+			if(siteids[i].equalsIgnoreCase(sitename)){
+				for(int j = 0; j < parameters.length; j++){
+					if(parameters[j].equalsIgnoreCase(param)){
+						return java.lang.Double.parseDouble(data[i][j]);
+					}
+				}
+				return 0;
+			}
+		}
 		return 0;
 	}
 
 
-
-
 	@Override
-	public
-	String getSiteID(String sitename) {
-		// TODO Auto-generated method stub
+	/**
+	 * This pulls data from all sites from a particular
+	 * parameter. 
+	 */
+	public double[] getData(String param) {
+		int idx = 0;
+		double[] tdata = new double[siteids.length];
+		for(int i = 0; i < parameters.length; i++){
+			if(param.equalsIgnoreCase(parameters[i])){
+				idx = i;
+				break;
+			}
+		}
+		for(int i = 0; i < siteids.length; i++){
+			tdata[i] = java.lang.Double.parseDouble(data[i][idx]);
+		}
 		return null;
 	}
 
@@ -255,40 +320,37 @@ public class MdfData extends Data{
 
 
 	@Override
-	public
-	double[] getData(String param) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Returns all site names.  
+	 */
+	public String[] getSites() {
+		return sitenames;
 	}
 
 
 
 
 	@Override
-	public
-	String[] getSites() {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * returns all site locations as a Point
+	 */
+	public Double[] getLocations() {
+		Double[] locs = new Double[siteids.length];
+		for(int i = 0; i < siteids.length; i++){
+			locs[i].setLocation(lons[i], lats[i]);
+		}
+		return locs;
 	}
 
 
 
 
 	@Override
-	public
-	Double[] getLocations() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-	@Override
-	public
-	String[] getSiteIDs() {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * returns all site ids
+	 */
+	public String[] getSiteIDs() {
+		return siteids;
 	}
 
 	
@@ -317,6 +379,7 @@ public class MdfData extends Data{
 		return "";
 	}
 	
+	@SuppressWarnings("unused")
 	private String getNodeValue(String tagName, NodeList nodes){
 		for (int x = 0; x < nodes.getLength(); x++){
 			Node node = nodes.item(x);
@@ -343,6 +406,7 @@ public class MdfData extends Data{
 		return "";
 	}
 	
+	@SuppressWarnings("unused")
 	private String getNodeAttr(String tagName, String attrName, NodeList nodes){
 		for(int x = 0; x < nodes.getLength(); x++){
 			Node node = nodes.item(x);

@@ -87,7 +87,7 @@ public class driver {
 		image.drawWindBarb(78, 280, 28.06, -83.911193, Color.white);
 		image.testPrint("testmap1");
 		
-		data.Data testing = new MdfData("junk", "siteinfo.xml");
+		data.Data testing = new MdfData("test.mdf", "siteinfo.xml");
 		testing.importData();
 		
 		
