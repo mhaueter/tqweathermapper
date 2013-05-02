@@ -1,8 +1,14 @@
 package data;
 
 import java.awt.geom.Point2D.Double;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 
 import org.w3c.dom.NamedNodeMap;
@@ -45,12 +51,12 @@ public class MdfData extends Data{
 		}
 		try {
 			importSiteInfo();
+			importDataFile();
 		} catch (SAXException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		importDataFile();
 	}
 	
 	
@@ -125,7 +131,76 @@ public class MdfData extends Data{
 	}
 	
 	public void importDataFile(){
-		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(new File(this.dataFile)));
+			String buffer;
+			int line = 0;
+			String delims = " ";
+			int params;
+			int year;
+			int month;
+			int day;
+			int basehour;
+			int baseminute;
+			int basesecond;
+			int cnt = 0;
+			while((buffer = br.readLine())  != null){
+				//System.out.println(buffer); // test print
+				line++;
+				StringTokenizer st = new StringTokenizer(buffer,delims, false);
+				String tmp;
+				if(line == 1){
+					String ver = st.nextToken();
+					continue;
+				}
+				if(line == 2){
+					params = Integer.parseInt(st.nextToken());
+					
+					this.parameters = new String[params + 3];
+					this.data = new String[this.siteids.length][params + 3];
+					
+					year = Integer.parseInt(st.nextToken());
+					month = Integer.parseInt(st.nextToken());
+					day = Integer.parseInt(st.nextToken());
+					basehour = Integer.parseInt(st.nextToken());
+					baseminute = Integer.parseInt(st.nextToken());
+					basesecond = Integer.parseInt(st.nextToken());
+					continue;
+				}				
+				else{
+					tmp = st.nextToken();
+				}
+				
+				
+				if(tmp.equalsIgnoreCase("STID")){
+					this.parameters[0] = tmp;
+					for(int i = 1; i < this.parameters.length; i++){
+						this.parameters[i] = st.nextToken();
+					}
+				}
+				else{
+					data[cnt][0] = tmp;
+					for(int i = 1; i < this.parameters.length; i++){
+						data[cnt][i] = st.nextToken();
+						//System.out.println(data[cnt][i]);
+					}
+					cnt++;
+				}
+				
+				
+				
+				
+			}
+			
+			br.close();
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 

@@ -12,7 +12,7 @@ public abstract class Data {
 	protected double[] lats; // Required info
 	protected double[] lons; // Required info
 	protected double[] elevs; // Required info
-	protected double data[][];
+	protected String data[][]; // TODO need better encapsulator of data.
 	protected String timestamp;
 	
 
