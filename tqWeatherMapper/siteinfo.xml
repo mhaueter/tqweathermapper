@@ -1,208 +1,165 @@
 <?datasetconfig version="1.0d1"?>
+
 <siteinfo>
-<table>
-<fieldref id="stid" type="string"/>
-<fieldref id="name" type="string"/>
-<fieldref id="lat" type="float"/>
-<fieldref id="lon" type="float"/>
-<fieldref id="elev" type="float"/>
-<record>"0017","ADA",34.7833,-96.6833,1015</record>
-<record>"0179","ALTUS",34.5833,-99.3333,1380</record>
-<record>"0184","ALTUS",34.8833,-99.3000,1525</record>
-<record>"0193","ALVA",36.8167,-98.6500,1395</record>
-<record>"0200","AMBER",35.1667,-97.8833,1245</record>
-<record>"0224","ANADARKO",35.0667,-98.2000,1168</record>
-<record>"0256","ANTLERS",34.2500,-95.6500,520</record>
-<record>"0260","APACHE",34.9000,-98.3667,1280</record>
-<record>"0292","ARDMORE",34.1667,-97.1333,880</record>
-<record>"0332","ARNETT",36.1333,-99.7667,2445</record>
-<record>"0364","ASHLAND",34.7833,-96.0667,765</record>
-<record>"0394","ATOKA",34.4500,-96.0667,595</record>
-<record>"0535","BARNSDALL",36.5667,-96.1667,770</record>
-<record>"0548","BARTLESVILLE",36.7500,-96.0000,715</record>
-<record>"0567","BATTIEST",34.3833,-94.9333,810</record>
-<record>"0584","BEAR",34.1333,-94.9500,800</record>
-<record>"0593","BEAVER",36.8167,-100.5333,2465</record>
-<record>"0631","BEGGS",35.7500,-96.0833,790</record>
-<record>"0755","BILLINGS",36.5333,-97.4500,1000</record>
-<record>"0782","BIXBY",35.9833,-95.8833,605</record>
-<record>"0818","BLACKWELL",36.8000,-97.2833,1000</record>
-<record>"0830","BLANCHARD",35.1167,-97.6667,1275</record>
-<record>"0908","BOISE",36.7333,-102.4833,4145</record>
-<record>"0980","BOSWELL",34.0167,-95.8667,550</record>
-<record>"1144","BRISTOW",35.8333,-96.4000,830</record>
-<record>"1162","BROKEN",34.0500,-94.7333,475</record>
-<record>"1168","BROKEN",34.1333,-94.7000,443</record>
-<record>"1243","BUFFALO",36.8500,-99.6333,1795</record>
-<record>"1256","BURBANK",36.7000,-96.7333,975</record>
-<record>"1391","CALVIN",34.9667,-96.2500,800</record>
-<record>"1445","CANTON",36.0667,-98.5833,1590</record>
-<record>"1499","CARNASAW",34.1500,-94.6333,1000</record>
-<record>"1504","CARNEGIE",35.1833,-98.5833,1481</record>
-<record>"1544","CARTER",34.2667,-94.7833,1300</record>
-<record>"1684","CHANDLER",35.7000,-96.8833,925</record>
-<record>"1706","CHATTANOOGA",34.4500,-98.6167,1154</record>
-<record>"1711","CHECOTAH",35.4667,-95.5167,640</record>
-<record>"1717","CHELSEA",36.4833,-95.4167,735</record>
-<record>"1724","CHEROKEE",36.7667,-98.3667,1180</record>
-<record>"1738","CHEYENNE",35.6000,-99.6833,2005</record>
-<record>"1745","CHICKASAW",34.5000,-96.9667,1000</record>
-<record>"1750","CHICKASHA",35.0500,-97.9167,1085</record>
-<record>"1828","CLAREMORE",36.3167,-95.5833,588</record>
-<record>"1858","CLAYTON",34.6500,-95.5833,679</record>
-<record>"1902","CLEVELAND",36.2833,-96.5333,920</record>
-<record>"1909","CLINTON",35.5167,-98.9833,1610</record>
-<record>"2039","COLONY",35.3833,-98.6500,1575</record>
-<record>"2054","COMANCHE",34.3667,-97.9000,980</record>
-<record>"2125","CORDELL",35.2833,-98.9833,1540</record>
-<record>"2196","COX",34.7500,-97.7000,1185</record>
-<record>"2242","CRESCENT",35.9500,-97.6167,1130</record>
-<record>"2318","CUSHING",35.9833,-96.7667,950</record>
-<record>"2354","DAISY",34.5500,-95.6833,755</record>
-<record>"2485","DEWAR",35.4500,-95.9000,685</record>
-<record>"2660","DUNCAN",34.5000,-97.9667,1125</record>
-<record>"2668","DUNCAN",34.4833,-98.1500,1070</record>
-<record>"2678","DURANT",34.0000,-96.3667,600</record>
-<record>"2818","EL",35.5500,-97.9500,1315</record>
-<record>"2849","ELK",35.3833,-99.4000,1970</record>
-<record>"2912","ENID",36.4167,-97.8667,1245</record>
-<record>"2944","ERICK",35.2167,-99.8667,2060</record>
-<record>"2993","EUFAULA",35.2000,-95.5833,620</record>
-<record>"3065","FANSHAWE",34.9500,-94.9000,545</record>
-<record>"3070","FARGO",36.3833,-99.6333,2110</record>
-<record>"3083","FARRIS",34.2667,-95.9167,510</record>
-<record>"3182","FLASHMAN",34.4833,-95.0000,1752</record>
-<record>"3250","FORAKER",36.8667,-96.5667,1265</record>
-<record>"3304","FORT",36.5500,-99.5333,2030</record>
-<record>"3353","FREDERICK",34.3833,-99.0167,1285</record>
-<record>"3358","FREEDOM",36.7667,-99.1167,1535</record>
-<record>"3407","GAGE",36.3000,-99.7667,2191</record>
-<record>"3489","GATE",36.8500,-100.0500,2250</record>
-<record>"3497","GEARY",35.6333,-98.3167,1595</record>
-<record>"3628","GOODWELL",36.6000,-101.6167,3310</record>
-<record>"3709","GRANDFIELD",34.2833,-98.7333,1060</record>
-<record>"3740","GREAT",36.7500,-98.1333,1200</record>
-<record>"3821","GUTHRIE",35.8167,-97.4000,1110</record>
-<record>"3871","HAMMON",35.5833,-99.4000,1820</record>
-<record>"3884","HANNA",35.2000,-95.8833,679</record>
-<record>"3956","HASKELL",35.8167,-95.6833,595</record>
-<record>"4001","HEALDTON",34.2167,-97.4667,734</record>
-<record>"4008","HEAVENER",34.9167,-94.6000,592</record>
-<record>"4017","HEE",34.3333,-94.6500,1503</record>
-<record>"4019","HELENA",36.5333,-98.2833,1350</record>
-<record>"4055","HENNESSEY",36.1000,-97.8333,1150</record>
-<record>"4204","HOBART",35.0000,-99.0500,1570</record>
-<record>"4235","HOLDENVILLE",35.0500,-96.3667,855</record>
-<record>"4249","HOLLIS",34.6833,-99.8167,1621</record>
-<record>"4258","HOLLOW",36.8667,-95.2667,910</record>
-<record>"4289","HOMINY",36.4167,-96.3833,785</record>
-<record>"4298","HOOKER",36.8667,-101.2000,2995</record>
-<record>"4384","HUGO",34.0000,-95.5167,570</record>
-<record>"4393","HULAH",36.9167,-96.1000,744</record>
-<record>"4451","IDABEL",33.8833,-94.8167,460</record>
-<record>"4489","INGALLS",36.1167,-96.8833,935</record>
-<record>"4573","JEFFERSON",36.7167,-97.7833,1045</record>
-<record>"4672","KANSAS",36.2000,-94.7833,1180</record>
-<record>"4766","KENTON",36.9000,-102.9667,4350</record>
-<record>"4812","KEYSTONE",36.1500,-96.2500,705</record>
-<record>"4861","KINGFISHER",35.8500,-97.9000,1100</record>
-<record>"4865","KINGSTON",34.0000,-96.7333,820</record>
-<record>"4915","KONAWA",34.9500,-96.7500,970</record>
-<record>"4975","LAKE",35.2833,-95.4333,850</record>
-<record>"5045","LAVERNE",36.7000,-99.9000,2100</record>
-<record>"5063","LAWTON",34.6167,-98.4500,1150</record>
-<record>"5090","LEEDEY",35.8333,-99.3333,2010</record>
-<record>"5108","LEHIGH",34.4667,-96.2167,640</record>
-<record>"5216","LINDSAY",34.8167,-97.6500,980</record>
-<record>"5247","LOCO",34.2667,-97.6167,955</record>
-<record>"5329","LOOKEBA",35.3667,-98.3833,1442</record>
-<record>"5437","LYONS",35.7667,-94.7333,1025</record>
-<record>"5468","MADILL",34.1167,-96.7833,770</record>
-<record>"5509","MANGUM",34.8833,-99.5000,1595</record>
-<record>"5522","MANNFORD",36.1667,-96.4333,830</record>
-<record>"5540","MARAMEC",36.2500,-96.6833,945</record>
-<record>"5563","MARIETTA",33.8833,-97.1667,802</record>
-<record>"5581","MARLOW",34.6500,-97.9833,1250</record>
-<record>"5589","MARSHALL",36.1500,-97.6167,1045</record>
-<record>"5664","MCALESTER",34.9000,-95.7833,760</record>
-<record>"5693","MC",35.1500,-94.9667,659</record>
-<record>"5713","MCGEE",34.3167,-95.8667,672</record>
-<record>"5768","MEDFORD",36.8000,-97.7333,1090</record>
-<record>"5779","MEEKER",35.5000,-96.9833,925</record>
-<record>"5855","MIAMI",36.8833,-94.8833,805</record>
-<record>"6035","MORAVIA",35.1500,-99.5000,1690</record>
-<record>"6130","MUSKOGEE",35.7167,-95.2833,518</record>
-<record>"6139","MUTUAL",36.2333,-99.1667,1865</record>
-<record>"6278","NEWKIRK",36.8833,-97.0667,1140</record>
-<record>"6386","NORMAN",35.2333,-97.4500,1179</record>
-<record>"6485","NOWATA",36.7000,-95.6333,710</record>
-<record>"6629","OKEENE",36.1167,-98.3167,1215</record>
-<record>"6638","OKEMAH",35.4333,-96.3000,935</record>
-<record>"6661","OKLAHOMA",35.3833,-97.6000,1304</record>
-<record>"6670","OKMULGEE",35.6167,-96.0167,647</record>
-<record>"6678","OKTAHA",35.6000,-95.4667,650</record>
-<record>"6751","ORIENTA",36.3500,-98.4833,1260</record>
-<record>"6926","PAULS",34.7333,-97.2833,940</record>
-<record>"6935","PAWHUSKA",36.6667,-96.3500,835</record>
-<record>"6940","PAWNEE",36.3500,-96.8000,835</record>
-<record>"7003","PERKINS",35.9667,-97.0333,900</record>
-<record>"7012","PERRY",36.2833,-97.2833,1025</record>
-<record>"7068","PIEDMONT",35.6833,-97.7500,1200</record>
-<record>"7201","PONCA",36.7333,-97.1000,999</record>
-<record>"7214","PONTOTOC",34.5000,-96.6333,1025</record>
-<record>"7246","POTEAU",35.0500,-94.6333,669</record>
-<record>"7254","POTEAU",35.0500,-94.6167,440</record>
-<record>"7264","PRAGUE",35.4833,-96.7000,1010</record>
-<record>"7309","PRYOR",36.3000,-95.3167,625</record>
-<record>"7327","PURCELL",35.0333,-97.3667,1075</record>
-<record>"7358","QUAPAW",36.9667,-94.7833,850</record>
-<record>"7372","QUINTON",35.1333,-95.3667,654</record>
-<record>"7390","RALSTON",36.5000,-96.7333,825</record>
-<record>"7403","RANDLETT",34.1833,-98.3167,955</record>
-<record>"7505","REDROCK",36.4667,-97.1833,910</record>
-<record>"7534","REGNIER",36.9333,-102.6333,4020</record>
-<record>"7556","RENFROW",36.9333,-97.6667,1214</record>
-<record>"7565","RETROP",35.1667,-99.3667,1777</record>
-<record>"7579","REYDON",35.6333,-99.9167,2385</record>
-<record>"7727","ROOSEVELT",34.8500,-99.0167,1462</record>
-<record>"7862","SALLISAW",35.4500,-94.8000,660</record>
-<record>"7952","SAYRE",35.3000,-99.6333,1900</record>
-<record>"8042","SEMINOLE",35.2333,-96.6667,900</record>
-<record>"8110","SHAWNEE",35.3500,-96.9000,1050</record>
-<record>"8258","SKIATOOK",36.3667,-96.0000,645</record>
-<record>"8285","SMITHVILLE",34.4833,-94.6167,822</record>
-<record>"8299","SNYDER",34.6667,-98.9500,1350</record>
-<record>"8305","SOBOL",34.1333,-95.2333,750</record>
-<record>"8380","SPAVINAW",36.3833,-95.0500,685</record>
-<record>"8416","SPIRO",35.2500,-94.6167,495</record>
-<record>"8501","STILLWATER",36.1167,-97.1000,895</record>
-<record>"8506","STILWELL",35.9000,-94.6500,1000</record>
-<record>"8563","STROUD",35.7500,-96.6500,860</record>
-<record>"8652","SWEETWATER",35.4167,-99.9000,2160</record>
-<record>"8677","TAHLEQUAH",35.9333,-94.9667,850</record>
-<record>"8708","TALOGA",36.0333,-98.9667,1705</record>
-<record>"8815","THOMAS",35.7500,-98.7500,1780</record>
-<record>"8884","TISHOMINGO",34.2000,-96.6333,642</record>
-<record>"8992","TULSA",36.2000,-95.8833,650</record>
-<record>"9017","TURPIN",36.8167,-100.8667,2705</record>
-<record>"9023","TUSKAHOMA",34.6333,-95.2833,600</record>
-<record>"9086","UNION",35.3667,-97.9000,1255</record>
-<record>"9118","VALLIANT",34.0000,-95.1500,475</record>
-<record>"9172","VICI",36.1500,-99.2833,2259</record>
-<record>"9203","VINITA",36.6667,-95.1333,735</record>
-<record>"9212","VINSON",34.9167,-99.9167,1945</record>
-<record>"9247","WAGONER",35.9667,-95.3667,590</record>
-<record>"9278","WALTERS",34.3667,-98.3000,1005</record>
-<record>"9364","WATONGA",35.8500,-98.4167,1550</record>
-<record>"9395","WAURIKA",34.1667,-98.0000,875</record>
-<record>"9404","WAYNOKA",36.5333,-98.8833,1450</record>
-<record>"9422","WEATHERFORD",35.5167,-98.7000,1618</record>
-<record>"9445","WEBBERS",35.4833,-95.2000,550</record>
-<record>"9479","WELTY",35.6167,-96.4000,750</record>
-<record>"9571","WETUMKA",35.2667,-96.2167,710</record>
-<record>"9575","WEWOKA",35.1500,-96.4833,830</record>
-<record>"9629","WICHITA",34.7333,-98.7167,1665</record>
-<record>"9634","WILBURTON",34.9500,-95.1667,635</record>
-<record>"9668","WILLOW",35.0500,-99.5167,1742</record>
-<record>"9760","WOODWARD",36.4333,-99.3833,1900</record>
-</table></siteinfo>
+	<table>
+		<fieldref id="stid" type="string"/>
+		<fieldref id="name" type="string"/>
+		<fieldref id="stnm" type="int"/>
+		<fieldref id="lat" type="float"/>
+		<fieldref id="lon" type="float"/>
+		<fieldref id="elev" type="float"/>
+		<fieldref id="cldv" type="int"/>
+		<fieldref id="wcr05" type="float"/>
+		<fieldref id="wcs05" type="float"/>
+		<fieldref id="a05" type="float"/>
+		<fieldref id="n05" type="float"/>
+		<fieldref id="wcr25" type="float"/>
+		<fieldref id="wcs25" type="float"/>
+		<fieldref id="a25" type="float"/>
+		<fieldref id="n25" type="float"/>
+		<fieldref id="wcr60" type="float"/>
+		<fieldref id="wcs60" type="float"/>
+		<fieldref id="a60" type="float"/>
+		<fieldref id="n60" type="float"/>
+		<fieldref id="wcr75" type="float"/>
+		<fieldref id="wcs75" type="float"/>
+		<fieldref id="a75" type="float"/>
+		<fieldref id="n75" type="float"/>
+		<record> "acme", "Acme", 110, 34.8056, -98.0056, 397, 5, 0.189, 0.519, 131.413, 1.646, 0.221, 0.428, 37.376, 1.756, 0.181, 0.411, 1384.677, 1.215, 0.212, 0.411, 38.497, 1.803 </record>
+		<record> "adax", "Ada", 1, 34.7989, -96.6692, 295, 8, 0.188, 0.462, 272.847, 1.463, 0.18, 0.342, 65.528, 1.603, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "altu", "Altus", 2, 34.5872, -99.3378, 416, 7, 0.233, 0.454, 37.179, 1.343, 0.267, 0.455, 14.652, 1.729, 0.246, 0.431, 25.271, 1.389, 0.271, 0.431, 13.179, 1.723 </record>
+		<record> "alv2", "Alva", 116, 36.7083, -98.7075, 439, 2, 0.236, 0.455, 44.89, 1.334, 0.237, 0.455, 78.598, 1.216, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "alva", "Alva (retired 1998)", 3, 36.7797, -98.6717, 450, 2, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "antl", "Antlers (retired 2011)", 4, 34.2242, -95.7006, 179, 9, 0.142, 0.407, 3103.902, 1.26, 0.153, 0.407, 1339.638, 1.338, 0.118, 0.383, 16491.185, 1.152, 0.11, 0.383, 32782.609, 1.135 </record>
+		<record> "ant2", "Antlers", 135, 34.24967, -95.66844, 172, 9, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "apac", "Apache", 111, 34.9139, -98.2917, 440, 7, 0.176, 0.464, 33.705, 2.597, 0.162, 0.422, 1168.364, 1.26, 0.159, 0.397, 257.715, 1.168, 0.207, 0.389, 68.662, 1.34 </record>
+		<record> "ard2", "Ardmore", 126, 34.1926, -97.0857, 266, 8, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "ardm", "Ardmore (retired 2004)", 5, 34.1922, -97.0850, 266, 8, 0.209, 0.44, 29.441, 1.488, 0.181, 0.49, 55.583, 1.151, 0.228, 0.466, 25.965, 1.23, 0.023, 0.466, 68.781, 1.079 </record>
+		<record> "arne", "Arnett", 6, 36.0728, -99.9014, 719, 1, 0.188, 0.419, 25.859, 1.785, 0.212, 0.442, 18.226, 1.822, 0.188, 0.417, 44.093, 1.397, 0.21, 0.416, 34.93, 1.57 </record>
+		<record> "beav", "Beaver", 8, 36.8022, -100.5303, 758, 1, 0.209, 0.442, 25.547, 1.796, 0.246, 0.455, 16.076, 1.803, 0.182, 0.419, 4026.084, 1.161, 0.208, 0.417, 134.004, 1.343 </record>
+		<record> "beex", "Bee (retired 2005)", 119, 34.1905, -96.6435, 196, 8, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "bess", "Bessie", 9, 35.4017, -99.0589, 511, 4, 0.169, 0.445, 11.746, 1.608, 0.157, 0.24, 24.598, 1.556, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "bixb", "Bixby", 10, 35.9625, -95.8661, 184, 3, 0.17, 0.66, 126.685, 1.717, 0, 0.424, 1447.533, 1.099, 0.18, 0.386, 11.851, 1.97, 0.222, 0.513, 13.893, 1.783 </record>
+		<record> "blac", "Blackwell", 11, 36.7544, -97.2539, 304, 2, 0, 0.46, 98.006, 1.129, 0.239, 0.449, 11.723, 1.683, 0.207, 0.397, 25.413, 1.366, 0.189, 0.394, 34.301, 1.295 </record>
+		<record> "bois", "Boise City", 12, 36.6925, -102.4972, 1267, 1, 0.219, 0.455, 138.507, 1.234, 0.13, 0.455, 171.663, 1.117, 0.206, 0.443, 12.85, 1.285, 0.198, 0.443, 12.989, 1.288 </record>
+		<record> "bowl", "Bowlegs", 13, 35.1717, -96.6314, 281, 5, 0.18, 0.418, 51.011, 1.534, 0.201, 0.418, 51.368, 1.532, 0.206, 0.431, 195.526, 1.249, 0.211, 0.431, 116.793, 1.314 </record>
+		<record> "brec", "Breckinridge", 14, 36.4119, -97.6942, 352, 2, 0.148, 0.457, 90.267, 1.248, 0.268, 0.438, 6.008, 1.846, 0.211, 0.397, 10.37, 1.338, nan, nan, nan, nan </record>
+		<record> "bris", "Bristow", 15, 35.7808, -96.3539, 239, 5, 0.163, 0.418, 68.043, 1.612, 0.178, 0.419, 41.487, 1.654, 0.142, 0.419, 66.595, 1.272, nan, nan, nan, nan </record>
+		<record> "brok", "Broken Bow", 124, 34.0433, -94.6244, 113, 9, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "bbow", "Broken Bow (retired 2002)", 7, 34.0144, -94.6131, 113, 9, 0.046, 0.442, 74.192, 1.159, 0.033, 0.442, 48.599, 1.151, 0.025, 0.43, 24.297, 1.139, 0.022, 0.431, 17.783, 1.132 </record>
+		<record> "buff", "Buffalo", 16, 36.8314, -99.6408, 559, 1, 0.191, 0.443, 20.017, 1.871, 0.218, 0.455, 10.392, 2.032, 0.235, 0.431, 11.563, 1.797, 0.245, 0.431, 11.564, 1.762 </record>
+		<record> "burb", "Burbank", 17, 36.6342, -96.8111, 301, 3, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "burn", "Burneyville", 18, 33.8939, -97.2692, 228, 8, 0.165, 0.399, 95.35, 1.782, 0.171, 0.412, 76.916, 1.809, 0.167, 0.378, 60.599, 1.852, 0.166, 0.376, 76.211, 1.881 </record>
+		<record> "butl", "Butler", 19, 35.5914, -99.2706, 520, 4, 0.165, 0.445, 79.614, 1.217, 0.221, 0.467, 11.344, 1.399, 0.215, 0.443, 7.245, 1.326, 0.191, 0.443, 19.555, 1.278 </record>
+		<record> "byar", "Byars", 20, 34.8497, -97.0033, 345, 8, 0.167, 0.445, 134.245, 1.766, 0.185, 0.347, 285.978, 1.31, 0.182, 0.373, 2826.528, 1.198, 0.187, 0.309, 7313.215, 1.241 </record>
+		<record> "calv", "Calvin (retired 2009)", 21, 34.9925, -96.3342, 234, 6, 0.178, 0.459, 20.657, 1.962, 0.172, 0.392, 24.244, 1.773, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "cama", "Camargo", 22, 36.0283, -99.3464, 589, 4, 0.177, 0.441, 21.78, 1.87, 0.172, 0.419, 20.127, 1.875, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "cato", "Catoosa (retired 2001)", 112, 36.2619, -95.7572, 232, 3, 0.226, 0.467, 11.827, 1.488, 0.18, 0.467, 33.982, 1.213, 0.243, 0.466, 37.712, 1.18, nan, nan, nan, nan </record>
+		<record> "cent", "Centrahoma", 23, 34.6086, -96.3331, 208, 8, 0.181, 0.419, 31.996, 1.706, 0.151, 0.443, 452.779, 1.213, 0.184, 0.431, 377.203, 1.162, 0.192, 0.431, 86.417, 1.249 </record>
+		<record> "chan", "Chandler", 24, 35.6528, -96.8042, 291, 5, 0.234, 0.562, 764.274, 1.352, 0.192, 0.373, 323.736, 1.089, 0.164, 0.435, 178.366, 1.103, 0.226, 0.409, 1064.987, 1.132 </record>
+		<record> "cher", "Cherokee", 25, 36.7481, -98.3628, 362, 2, 0.186, 0.443, 16.449, 1.891, 0.148, 0.443, 1293.875, 1.209, 0.183, 0.419, 25.094, 1.757, 0.181, 0.419, 16.856, 1.8 </record>
+		<record> "chey", "Cheyenne", 26, 35.5458, -99.7275, 694, 4, 0.201, 0.419, 38.474, 1.643, 0.191, 0.419, 30.91, 1.785, 0.169, 0.419, 88.71, 1.224, 0.192, 0.419, 55.93, 1.312 </record>
+		<record> "chic", "Chickasha", 27, 35.0319, -97.9144, 328, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "clrm", "Claremore", 122, 36.3213, -95.6461, 207, 3, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "clar", "Claremore (retired 2002)", 28, 36.3172, -95.6417, 213, 3, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "clay", "Clayton", 29, 34.6556, -95.3261, 186, 9, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "clou", "Cloudy", 30, 34.2231, -95.2494, 221, 9, 0.141, 0.447, 21.917, 1.528, 0.171, 0.452, 20.902, 1.461, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "cook", "Cookson", 31, 35.6794, -94.8486, 299, 6, 0, 0.44, 11.974, 1.255, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "copa", "Copan", 32, 36.9097, -95.8853, 250, 3, 0.175, 0.51, 47.692, 1.464, 0.158, 0.435, 168.613, 1.225, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "dura", "Durant", 33, 33.9206, -96.3200, 197, 8, 0.189, 0.418, 46.07, 1.564, 0.177, 0.455, 729.18, 1.174, 0.263, 0.467, 46.929, 1.303, 0.251, 0.467, 100.797, 1.225 </record>
+		<record> "elre", "El Reno", 34, 35.5481, -98.0358, 419, 5, 0.224, 0.535, 12.847, 1.878, 0, 0.493, 118.331, 1.127, 0.23, 0.425, 8.208, 1.763, 0.182, 0.39, 21.185, 1.283 </record>
+		<record> "eric", "Erick", 35, 35.2047, -99.8033, 603, 4, 0.176, 0.407, 47.527, 2.139, 0.177, 0.406, 52.604, 2.055, 0.18, 0.395, 50.492, 1.781, 0.191, 0.395, 31.379, 1.861 </record>
+		<record> "eufa", "Eufaula", 36, 35.3000, -95.6583, 200, 6, 0.178, 0.443, 13.689, 2.054, 0.234, 0.442, 10.314, 2.082, 0.24, 0.467, 29.25, 1.328, 0, 0.455, 3.039, 1.18 </record>
+		<record> "fair", "Fairview", 37, 36.2636, -98.4978, 405, 2, 0, 0.455, 354.067, 1.11, 0.229, 0.455, 9.707, 1.895, 0.246, 0.431, 14.503, 1.598, 0.163, 0.443, 38.142, 1.179 </record>
+		<record> "fitt", "Fittstown", 127, 34.5521, -96.7177, 350, 8, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "fora", "Foraker", 38, 36.8403, -96.4278, 330, 3, 0.194, 0.419, 42.915, 1.594, 0.202, 0.419, 60.114, 1.542, 0.223, 0.429, 38.309, 1.709, 0.193, 0.428, 616.921, 1.28 </record>
+		<record> "ftcb", "Fort Cobb", 40, 35.1492, -98.4667, 422, 7, 0.199, 0.554, 122.466, 1.873, 0.197, 0.376, 591.041, 1.434, 0.191, 0.426, 33.517, 2.545, 0.179, 0.419, 54.178, 2.321 </record>
+		<record> "free", "Freedom", 39, 36.7256, -99.1422, 530, 2, 0, 0.455, 159.885, 1.131, 0, 0.455, 127.882, 1.129, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "good", "Goodwell", 41, 36.6017, -101.6014, 997, 1, 0.21, 0.441, 48.048, 1.426, 0.212, 0.443, 47.06, 1.372, 0.199, 0.431, 49.771, 1.279, 0.206, 0.431, 498.65, 1.17 </record>
+		<record> "gra2", "Grandfield", 117, 34.2392, -98.7444, 341, 7, 0.233, 0.455, 12.079, 1.584, 0, 0.467, 79.299, 1.09, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "gran", "Grandfield (retired 1999)", 42, 34.2392, -98.7397, 342, 7, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "guth", "Guthrie", 43, 35.8489, -97.4800, 330, 5, 0.193, 0.453, 642.443, 1.319, 0.158, 0.364, 364.04, 1.158, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "hask", "Haskell", 44, 35.7475, -95.6400, 183, 6, 0.178, 0.454, 6.983, 1.678, 0.152, 0.455, 19.741, 1.391, 0.253, 0.443, 6.954, 1.685, 0.281, 0.455, 7.424, 1.771 </record>
+		<record> "hect", "Hectorville", 113, 35.8436, -96.0056, 243, 6, 0.024, 0.442, 520.328, 1.127, 0.143, 0.408, 193.18, 1.312, 0.181, 0.389, 99.877, 1.621, 0.226, 0.43, 382.277, 1.17 </record>
+		<record> "hint", "Hinton", 45, 35.4844, -98.4822, 493, 7, 0.178, 0.462, 34.267, 2.177, 0.175, 0.408, 30.834, 2.651, 0.178, 0.447, 30.412, 2.658, 0.179, 0.442, 27.414, 2.547 </record>
+		<record> "hoba", "Hobart", 46, 34.9897, -99.0525, 478, 7, 0, 0.467, 7.723, 2.022, 0.237, 0.479, 8.416, 1.282, 0.195, 0.455, 83.3, 1.641, 0.175, 0.455, 46.705, 1.175 </record>
+		<record> "hold", "Holdenville", 134, 35.070730, -96.355950, 280, 6, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "holl", "Hollis", 47, 34.6861, -99.8339, 497, 7, 0, 0.478, 219.279, 1.076, 0.207, 0.49, 123.181, 1.146, 0.196, 0.454, 15.38, 1.19, 0.006, 0.464, 181.149, 1.057 </record>
+		<record> "hook", "Hooker", 48, 36.8553, -101.2253, 912, 1, 0.202, 0.443, 20.973, 1.742, 0.196, 0.443, 48.54, 1.422, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "hugo", "Hugo", 49, 34.0308, -95.5400, 175, 9, 0.179, 0.442, 17.74, 1.792, 0.125, 0.441, 197.674, 1.18, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "idab", "Idabel", 50, 33.8303, -94.8806, 110, 9, 0.2, 0.455, 4.225, 1.758, 0.228, 0.467, 6.676, 1.38, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "inol", "Inola", 120, 36.1422, -95.4505, 190, 3, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "jayx", "Jay", 51, 36.4817, -94.7831, 304, 3, 0.164, 0.455, 6.017, 1.591, 0.135, 0.454, 5.935, 1.432, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "kent", "Kenton", 52, 36.8297, -102.8781, 1322, 1, 0.105, 0.436, 1489.671, 1.139, 0.168, 0.436, 1337.706, 1.151, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "ketc", "Ketchum Ranch", 53, 34.5289, -97.7647, 341, 8, 0, 0.576, 1034.369, 1.115, 0.191, 0.415, 75.84, 1.237, 0.193, 0.416, 417.889, 1.141, 0.223, 0.392, 850.116, 1.195 </record>
+		<record> "kin2", "Kingfisher", 133, 35.854310, -97.954420, 323, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "king", "Kingfisher (retired 2009)", 54, 35.8806, -97.9111, 319, 5, 0.192, 0.511, 18.481, 1.926, 0, 0.469, 420.103, 1.118, 0.22, 0.425, 14.691, 1.801, 0.225, 0.403, 9.025, 2.029 </record>
+		<record> "laho", "Lahoma", 55, 36.3844, -98.1114, 396, 2, 0, 0.464, 387.322, 1.11, 0.242, 0.424, 7.858, 1.985, 0.166, 0.386, 31.183, 1.227, 0.134, 0.412, 8.867, 1.233 </record>
+		<record> "carl", "Lake Carl Blackwell", 131, 36.1473, -97.28585, 293, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "lane", "Lane", 56, 34.3086, -95.9975, 181, 8, 0.158, 0.419, 47.399, 1.555, 0.163, 0.419, 26.217, 1.575, 0.157, 0.393, 30.101, 1.514, 0.176, 0.419, 29.672, 1.514 </record>
+		<record> "madi", "Madill", 57, 34.0361, -96.9431, 232, 8, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "mang", "Mangum", 58, 34.8361, -99.4239, 460, 7, 0.162, 0.406, 48.471, 3.563, 0.168, 0.406, 41.177, 3.767, 0.189, 0.431, 3527.601, 1.215, 0.247, 0.467, 79.726, 1.277 </record>
+		<record> "mare", "Marena", 59, 36.0644, -97.2128, 327, 5, 0.217, 0.435, 48.2, 1.604, 0.222, 0.449, 25.893, 1.819, 0.229, 0.405, 32.879, 1.667, 0.218, 0.38, 45.967, 1.641 </record>
+		<record> "mrsh", "Marshall", 125, 36.1168, -97.6068, 311, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "mars", "Marshall (retired 2003)", 60, 36.1186, -97.6014, 315, 5, 0.217, 0.438, 9.689, 1.848, 0.22, 0.463, 13.572, 1.328, 0.202, 0.422, 11.12, 1.304, 0.172, 0.381, 59.897, 1.184 </record>
+		<record> "mayr", "May Ranch", 61, 36.9869, -99.0111, 555, 2, 0.195, 0.419, 25.861, 1.774, 0.233, 0.443, 19.91, 1.877, 0.207, 0.431, 28.542, 1.247, 0.207, 0.431, 21.332, 1.282 </record>
+		<record> "mcal", "McAlester", 62, 34.8819, -95.7808, 230, 6, 0.155, 0.407, 90.776, 1.592, 0.237, 0.455, 60.887, 1.529, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "medf", "Medford", 63, 36.7922, -97.7456, 332, 2, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "medi", "Medicine Park", 64, 34.7292, -98.5667, 487, 7, 0.127, 0.415, 130.341, 1.248, 0.157, 0.24, 24.598, 1.556, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "miam", "Miami", 65, 36.8886, -94.8447, 247, 3, 0.14, 0.531, 13.635, 1.51, 0, 0.454, 13.01, 1.24, 0.192, 0.459, 18.968, 1.188, 0.061, 0.428, 13.273, 1.129 </record>
+		<record> "minc", "Minco", 66, 35.2722, -97.9556, 430, 5, 0.208, 0.453, 8.71, 1.902, 0.199, 0.455, 7.73, 1.78, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "mthe", "Mt Herman", 67, 34.3108, -94.8228, 284, 9, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "newk", "Newkirk", 68, 36.8981, -96.9106, 366, 2, 0.232, 0.558, 11.289, 1.956, 0.196, 0.462, 22.702, 1.413, 0.236, 0.414, 7.164, 1.749, nan, nan, nan, nan </record>
+		<record> "newp", "Newport", 123, 34.2282, -97.2007, 283, 8, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "ninn", "Ninnekah", 109, 34.9678, -97.9514, 356, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "nrmn", "Norman", 121, 35.2361, -97.4649, 357, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "norm", "Norman (retired 2002)", 69, 35.2556, -97.4836, 360, 5, 0, 0.48, 56.59, 1.133, 0.213, 0.421, 12.533, 1.311, 0.205, 0.412, 16.542, 1.3, 0.213, 0.391, 15.094, 1.347 </record>
+		<record> "nowa", "Nowata", 70, 36.7436, -95.6078, 206, 3, 0.126, 0.457, 14.805, 1.349, 0.149, 0.463, 16.668, 1.379, 0.187, 0.419, 26.313, 1.218, 0.236, 0.391, 13.26, 1.362 </record>
+		<record> "oilt", "Oilton", 71, 36.0314, -96.4972, 255, 5, 0.188, 0.455, 56.132, 1.57, 0.164, 0.374, 13.581, 1.296, 0.143, 0.409, 934.606, 1.181, nan, nan, nan, nan </record>
+		<record> "okem", "Okemah", 72, 35.4317, -96.2628, 263, 5, 0.196, 0.468, 13.267, 2.133, 0.15, 0.445, 462.37, 1.185, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "okce", "Oklahoma City East", 130, 35.472260, -97.464140, 355, 2, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record> 
+		<record> "okcn", "Oklahoma City North", 128, 35.5556, -97.5107, 362, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "okcw", "Oklahoma City West", 129, 35.471120, -97.582450, 366, 5, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "okmu", "Okmulgee", 73, 35.5811, -95.9150, 205, 6, 0.185, 0.441, 13.781, 1.926, 0.188, 0.451, 11.29, 1.701, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "paul", "Pauls Valley", 74, 34.7156, -97.2294, 291, 8, 0.196, 0.529, 12.318, 1.996, 0.208, 0.472, 10.279, 1.816, 0.196, 0.445, 10.589, 1.551, nan, nan, nan, nan </record>
+		<record> "pawn", "Pawnee", 75, 36.3611, -96.7697, 283, 3, 0.147, 0.467, 69.942, 1.159, 0.184, 0.464, 41.754, 1.188, 0, 0.428, 95.936, 1.091, 0, 0.442, 34.878, 1.087 </record>
+		<record> "perk", "Perkins", 76, 35.9983, -97.0481, 292, 5, 0.19, 0.452, 30.602, 1.767, 0.191, 0.438, 28.672, 1.701, 0.196, 0.422, 74.67, 1.303, 0.177, 0.405, 125.457, 1.29 </record>
+		<record> "port", "Porter", 118, 35.8258, -95.5600, 193, 3, 0.164, 0.417, 62.253, 1.508, 0.179, 0.418, 57.974, 1.538, 0.181, 0.394, 80.581, 1.44, nan, nan, nan, nan </record>
+		<record> "pres", "Preston (retired 2000)", 114, 35.7247, -95.9886, 300, 6, 0.19, 0.418, 30.602, 1.767, 0.194, 0.418, 29.572, 1.914, 0.184, 0.391, 74.609, 1.704, 0.177, 0.391, 88.643, 1.731 </record>
+		<record> "pryo", "Pryor", 77, 36.3689, -95.2717, 201, 3, 0.14, 0.467, 8.341, 1.513, 0.089, 0.453, 17.717, 1.269, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "putn", "Putnam", 78, 35.8992, -98.9603, 589, 4, 0.201, 0.442, 14.543, 1.932, 0.161, 0.455, 256.148, 1.23, 0.232, 0.431, 8.604, 2.022, 0.238, 0.431, 11.954, 1.836 </record>
+		<record> "redr", "Red Rock", 79, 36.3556, -97.1531, 293, 2, 0, 0.525, 770.016, 1.109, 0.197, 0.452, 120.224, 1.165, 0.193, 0.411, 38.766, 1.15, nan, nan, nan, nan </record>
+		<record> "retr", "Retrop", 80, 35.1231, -99.3597, 538, 4, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "ring", "Ringling", 81, 34.1939, -97.5883, 283, 8, 0.172, 0.418, 32.25, 1.888, 0.201, 0.455, 115.926, 1.341, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "sall", "Sallisaw", 82, 35.4381, -94.7978, 157, 6, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "seil", "Seiling", 83, 36.1903, -99.0406, 545, 2, 0.209, 0.442, 20.924, 1.795, 0.214, 0.443, 31.382, 1.601, 0.199, 0.395, 32.104, 1.779, 0.199, 0.394, 31.228, 1.71 </record>
+		<record> "shaw", "Shawnee", 84, 35.3650, -96.9483, 328, 5, 0.199, 0.472, 9.727, 1.827, 0.193, 0.418, 7.164, 1.846, 0.144, 0.39, 20.915, 1.175, nan, nan, nan, nan </record>
+		<record> "skia", "Skiatook", 85, 36.4147, -96.0372, 282, 3, 0.153, 0.66, 346.353, 1.417, 0.165, 0.435, 861.89, 1.308, 0.207, 0.395, 47.771, 1.787, 0.177, 0.312, 88.866, 1.6 </record>
+		<record> "slap", "Slapout", 86, 36.5969, -100.2619, 774, 1, 0.171, 0.407, 322.69, 1.758, 0.172, 0.419, 803.637, 1.203, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "spen", "Spencer", 87, 35.5422, -97.3411, 373, 5, 0.18, 0.416, 100.928, 1.736, 0.222, 0.451, 863.802, 1.334, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "stig", "Stigler", 88, 35.2653, -95.1814, 173, 6, 0.165, 0.455, 7.831, 1.857, 0.173, 0.455, 8.199, 1.836, 0.164, 0.431, 8.621, 1.638, nan, nan, nan, nan </record>
+		<record> "stil", "Stillwater", 89, 36.1211, -97.0950, 272, 5, 0, 0.56, 28.148, 1.132, 0.217, 0.456, 19.104, 1.636, 0.235, 0.451, 14.885, 1.787, 0.234, 0.435, 11.296, 1.894 </record>
+		<record> "stua", "Stuart", 90, 34.8764, -96.0700, 256, 6, 0.16, 0.407, 106.945, 1.646, 0.166, 0.417, 104.341, 1.572, 0.165, 0.377, 254.532, 1.53, 0.185, 0.393, 332.329, 1.476 </record>
+		<record> "sulp", "Sulphur", 91, 34.5661, -96.9506, 320, 8, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "tahl", "Tahlequah", 92, 35.9728, -94.9869, 290, 6, 0.163, 0.436, 8.516, 1.862, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "tali", "Talihina", 93, 34.7106, -95.0117, 204, 9, 0.164, 0.491, 67.008, 1.098, 0.154, 0.49, 59.135, 1.097, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "tipt", "Tipton", 94, 34.4394, -99.1375, 387, 7, 0.195, 0.418, 25.562, 1.878, 0.194, 0.418, 25.217, 1.888, 0.199, 0.394, 36.384, 1.747, 0.186, 0.395, 1675.771, 1.279 </record>
+		<record> "tish", "Tishomingo", 95, 34.3328, -96.6794, 268, 8, 0.127, 0.455, 18.808, 1.408, 0.143, 0.455, 20.443, 1.346, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "tull", "Tullahassee (retired 1999)", 96, 35.8397, -95.4133, 189, 3, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "vano", "Vanoss (retired 2012)", 115, 34.7890, -96.8430, 320, 8, 0.198, 0.418, 30.494, 1.808, 0.183, 0.443, 636.554, 1.212, 0.261, 0.467, 92.159, 1.25, 0.217, 0.466, 1350.125, 1.136 </record>
+		<record> "vini", "Vinita", 97, 36.7753, -95.2211, 236, 3, 0.184, 0.495, 12.981, 1.668, 0.149, 0.459, 27.453, 1.347, 0.191, 0.435, 20.909, 1.29, nan, nan, nan, nan </record>
+		<record> "wal2", "Walters", 136, 34.39957, -98.34569, 323, 7, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "walt", "Walters (retired 2012)", 98, 34.3647, -98.3206, 308, 7, 0.221, 0.455, 6.26, 2.244, 0.205, 0.491, 54.623, 1.184, 0.183, 0.467, 121.985, 1.15, 0.201, 0.43, 41.815, 1.25 </record>
+		<record> "wash", "Washington", 99, 34.9817, -97.5208, 345, 5, 0.189, 0.443, 31.385, 1.624, 0.23, 0.454, 36.432, 1.764, 0.196, 0.395, 36.608, 1.729, nan, nan, nan, nan </record>
+		<record> "wato", "Watonga", 100, 35.8422, -98.5261, 517, 4, 0.195, 0.443, 18.797, 1.802, 0.213, 0.443, 14.489, 1.86, 0.141, 0.419, 37.727, 1.231, 0.147, 0.419, 68.541, 1.208 </record>
+		<record> "waur", "Waurika", 101, 34.1678, -97.9878, 283, 8, 0.184, 0.419, 81.654, 1.712, 0.194, 0.419, 107.525, 1.617, 0.195, 0.395, 83.3, 1.641, 0.191, 0.395, 89.635, 1.605 </record>
+		<record> "weat", "Weatherford", 102, 35.5081, -98.7753, 538, 4, 0.176, 0.446, 14.607, 1.867, 0.183, 0.438, 18.742, 1.74, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "webb", "Webbers Falls (retired 2008)", 103, 35.4728, -95.1322, 145, 6, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "webr", "Webbers Falls", 132, 35.489000, -95.12330, 145, 6, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "west", "Westville", 104, 36.0111, -94.6450, 348, 6, 0, 0.449, 53.026, 1.158, 0.16, 0.462, 13.238, 1.269, 0.052, 0.429, 39.546, 1.152, nan, nan, nan, nan </record>
+		<record> "wilb", "Wilburton", 105, 34.9008, -95.3478, 199, 9, 0.105, 0.453, 22.208, 1.297, 0.138, 0.45, 25.27, 1.358, nan, nan, nan, nan, nan, nan, nan, nan </record>
+		<record> "wist", "Wister", 106, 34.9847, -94.6881, 143, 9, 0.193, 0.454, 10.206, 1.591, 0.198, 0.454, 10.593, 1.544, 0.232, 0.424, 8.604, 2.022, 0.127, 0.454, 26.026, 1.147 </record>
+		<record> "wood", "Woodward", 107, 36.4233, -99.4169, 625, 2, 0.194, 0.419, 27.379, 1.907, 0.203, 0.443, 33.506, 1.751, 0.142, 0.419, 1016.867, 1.185, 0.145, 0.419, 1310.176, 1.185 </record>
+		<record> "wyno", "Wynona", 108, 36.5172, -96.3422, 269, 3, 0.178, 0.419, 19.283, 1.385, 0.23, 0.439, 11.954, 1.643, nan, nan, nan, nan, nan, nan, nan, nan </record>
+	</table>
+</siteinfo>

@@ -125,6 +125,7 @@ public class MdfData extends Data{
 		int lonIdx = field_ids.indexOf("lon");
 		int elevIdx = field_ids.indexOf("elev");
 		//Note that other site information is not used by this Software at this time.
+		//TODO maybe add other parameter possibilities. 
 		
 		this.siteids = new String[sites.size()];
 		this.sitenames = new String[sites.size()];
@@ -282,14 +283,14 @@ public class MdfData extends Data{
 	 * This gets a single data 
 	 */
 	public double getDatum(String sitename, String param) {
+		System.out.println(siteids[0]);
 		for(int i = 0; i < siteids.length; i ++){
 			if(siteids[i].equalsIgnoreCase(sitename)){
 				for(int j = 0; j < parameters.length; j++){
 					if(parameters[j].equalsIgnoreCase(param)){
-						return java.lang.Double.parseDouble(data[i][j]);
+						return java.lang.Double.parseDouble(data[i-1][j]);
 					}
 				}
-				return 0;
 			}
 		}
 		return 0;

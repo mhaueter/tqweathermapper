@@ -90,6 +90,8 @@ public class driver {
 		data.Data testing = new MdfData("test.mdf", "siteinfo.xml");
 		testing.importData();
 		
+		System.out.println(testing.getDatum("ALTU", "TAIR"));
+		
 		
 		
 		
