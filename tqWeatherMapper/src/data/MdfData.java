@@ -24,7 +24,7 @@ public class MdfData extends Data{
 	boolean paramInfo;
 	String paramInfoFile;
 	
-	
+	//TODO create parameter index variables for quick access data.
 	//TODO create parameter info variables
 	
 	/**
@@ -283,12 +283,11 @@ public class MdfData extends Data{
 	 * This gets a single data 
 	 */
 	public double getDatum(String sitename, String param) {
-		System.out.println(siteids[0]);
 		for(int i = 0; i < siteids.length; i ++){
-			if(siteids[i].equalsIgnoreCase(sitename)){
+			if(data[i][0].equalsIgnoreCase(sitename)){
 				for(int j = 0; j < parameters.length; j++){
 					if(parameters[j].equalsIgnoreCase(param)){
-						return java.lang.Double.parseDouble(data[i-1][j]);
+						return java.lang.Double.parseDouble(data[i][j]);
 					}
 				}
 			}
@@ -312,7 +311,7 @@ public class MdfData extends Data{
 			}
 		}
 		for(int i = 0; i < siteids.length; i++){
-			tdata[i] = java.lang.Double.parseDouble(data[i][idx]);
+			tdata[i] = java.lang.Double.parseDouble(data[i][idx]); //TODO string friendly version
 		}
 		return null;
 	}
@@ -322,7 +321,7 @@ public class MdfData extends Data{
 
 	@Override
 	/**
-	 * Returns all site names.  
+	 * Returns all site names. Note not ordered. 
 	 */
 	public String[] getSites() {
 		return sitenames;
@@ -333,7 +332,7 @@ public class MdfData extends Data{
 
 	@Override
 	/**
-	 * returns all site locations as a Point
+	 * returns all site locations as a Point. Note not ordered
 	 */
 	public Double[] getLocations() {
 		Double[] locs = new Double[siteids.length];
