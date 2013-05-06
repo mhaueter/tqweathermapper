@@ -84,13 +84,15 @@ public class driver {
 		//}
 		System.out.println(image.projToDisplayRatio);
 		//image.drawVector(100, 50, 270, 28.06, -83.911193, Color.white);
-		image.drawWindBarb(78, 280, 28.06, -83.911193, Color.white);
-		image.testPrint("testmap1");
+		
 		
 		data.Data testing = new MdfData("test.mdf", "siteinfo.xml");
 		testing.importData();
 		
 		System.out.println(testing.getDatum("ALTU", "TAIR"));
+		
+		image.drawWindBarb(testing.getDatum("NRMN", "WSPD")*2.237, testing.getDatum("NRMN", "WDIR"), 28.06, -83.911193, Color.white);
+		image.testPrint("testmap1");
 		
 		
 		
