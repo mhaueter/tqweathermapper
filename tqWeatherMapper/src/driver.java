@@ -2,6 +2,8 @@
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
+import shapefile.Shapefile;
+
 import data.MdfData;
 import draw.*;
 
@@ -52,32 +54,11 @@ public class driver {
 		Point2D.Double cent = new Point2D.Double(-83.911193,28.06);
 		WxImage image = new WxImage(720,520,BufferedImage.TYPE_INT_RGB, cent);
 		
-		Point2D.Double[] points = new Point2D.Double[22];
-		points[0] = new Point2D.Double(-80.6, 25.185);
-		points[1] = new Point2D.Double(-80.2, 27.1276);
-		points[2] = new Point2D.Double(-81.46, 30.685);
-		points[3] = new Point2D.Double(-81.98, 30.798);
-		points[4] = new Point2D.Double(-82.01, 30.52);
-		points[5] = new Point2D.Double(-84.874878, 30.7);
-		points[6] = new Point2D.Double(-85, 30.9776);
-		points[7] = new Point2D.Double(-87.6, 30.99);
-		points[8] = new Point2D.Double(-87.47, 30.36);
-		points[9] = new Point2D.Double(-85.34, 29.741);
-		points[10] = new Point2D.Double(-84.02, 30.0976);
-		points[11] = new Point2D.Double(-83.01, 29.181);
-		points[12] = new Point2D.Double(-82.81, 29.15);
-		points[13] = new Point2D.Double(-82.64, 28.676);
-		points[14] = new Point2D.Double(-82.85, 27.89);
-		points[15] = new Point2D.Double(-82.678, 27.7);
-		points[16] = new Point2D.Double(-82.6, 27.98);
-		points[17] = new Point2D.Double(-82.5, 27.834);
-		points[18] = new Point2D.Double(-82.38, 27.91);
-		points[19] = new Point2D.Double(-82.672, 27.489);
-		points[20] = new Point2D.Double(-81.72, 25.998);
-		points[21] = new Point2D.Double(-80.99, 25.145);
+		
+		Shapefile S = new Shapefile("st12_d00.dat");
 		
 		//System.out.println(points[15]);
-		points = image.drawShape(points);
+		S.shapeVertices = image.drawShape(S.shapeVertices);
 
 		//for(int i = 0; i < points.length; i++){
 		//	System.out.println(points[i]);
