@@ -1,7 +1,6 @@
 package shapefile;
 
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Double;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +8,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Shapefile {
