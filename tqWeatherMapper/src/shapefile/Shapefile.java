@@ -33,7 +33,7 @@ public class Shapefile {
 				
 				double x = new BigDecimal(tmp[1]).doubleValue();
 				double y = new BigDecimal(tmp[2]).doubleValue();
-				System.out.println(x + ", " + y);
+				//System.out.println(x + ", " + y);
 				vals.add(new Point2D.Double(x,y));
 				
 			}

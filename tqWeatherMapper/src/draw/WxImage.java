@@ -120,6 +120,7 @@ public class WxImage extends BufferedImage{
 		drawheight = this.height - (tPB + bPB);
 		drawwidth = this.width - (rPB + lPB);
 		proj.initialize();
+		
 	}
 	
 	/**
@@ -265,7 +266,8 @@ public class WxImage extends BufferedImage{
 	 * @param points
 	 * @return
 	 */
-	public Point2D.Double[] drawShape(Point2D.Double[] points){
+	public Point2D.Double[] drawShape(Point2D.Double[] points, Color c){
+		this.g.setColor(c);
 		Point2D.Double[] dst = new Point2D.Double[points.length];
 		Point2D.Double hold = new Point2D.Double(0,0);
 		for(int i = 0; i < points.length; i++){
@@ -523,6 +525,12 @@ public class WxImage extends BufferedImage{
 	public void testPrint(String filename) throws IOException{
 		File outputfile = new File(filename + ".png"); 
 		ImageIO.write(this, "png", outputfile);
+	}
+	
+	
+	public void setBgColor(Color c){
+		this.g.setBackground(c);
+		this.g.fillRect(-1, -1, this.width + 1, this.height +1);
 	}
 //	/**
 //	 * This prints the Image to a file after applying 3x3 anti-aliasing

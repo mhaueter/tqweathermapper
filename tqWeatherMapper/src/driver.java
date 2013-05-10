@@ -53,12 +53,12 @@ public class driver {
 		
 		Point2D.Double cent = new Point2D.Double(-83.911193,28.06);
 		WxImage image = new WxImage(720,520,BufferedImage.TYPE_INT_RGB, cent);
-		
+		image.setBgColor(Color.white);
 		
 		Shapefile S = new Shapefile("st12_d00.dat");
 		
 		//System.out.println(points[15]);
-		S.shapeVertices = image.drawShape(S.shapeVertices);
+		S.shapeVertices = image.drawShape(S.shapeVertices, Color.black); 
 
 		//for(int i = 0; i < points.length; i++){
 		//	System.out.println(points[i]);
@@ -72,7 +72,7 @@ public class driver {
 		
 		System.out.println(testing.getDatum("ALTU", "TAIR"));
 		
-		image.drawWindBarb(testing.getDatum("NRMN", "WSPD")*2.237, testing.getDatum("NRMN", "WDIR"), 28.06, -83.911193, Color.white);
+		image.drawWindBarb(testing.getDatum("NRMN", "WSPD")*2.237, testing.getDatum("NRMN", "WDIR"), 28.06, -83.911193, Color.black);
 		image.testPrint("testmap1");
 		
 		
