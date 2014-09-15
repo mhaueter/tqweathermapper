@@ -1,9 +1,19 @@
 package data;
 
 import java.awt.geom.Point2D.Double;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class AsciiData extends Data{
-
+	
+	String dataFile;
+	
+	public AsciiData(String datafile){
+		this.dataFile = datafile;
+	}
+	
 	@Override
 	public
 	double getLat(String sitename) {
@@ -66,6 +76,19 @@ public class AsciiData extends Data{
 	public
 	void importData() {
 		// TODO Auto-generated method stub
+		String csvFile = this.dataFile;
+		BufferedReader br = null;
+		String line = "";
+		String delimitor = ",";
+		
+		try{
+			
+			br = new BufferedReader(new FileReader(csvFile));
+			while ((line = br.readLine()) != null) {
+				
+				// TODO put into data holders
+			}
+		}
 		
 	}
 
